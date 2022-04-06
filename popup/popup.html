@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="SELEÇÃO DE CASO COMO SPAM" icon-name="standard:case" size="large">
+
+        <template if:false={isSpam}>
+            <p class="centerTitle">Tem certeza que deseja marcar esse caso como Spam?</p>
+        
+            <div slot="footer" class="footer">
+                <lightning-button variant="destructive" label="Não" onclick={close} class="noBtn"></lightning-button>
+                <lightning-button variant="brand" label="Sim" onclick={setCase}></lightning-button>
+            </div>
+        </template>
+
+            <template if:true={isSpam}>
+                <p class="centerTitle">Caso já marcado como Spam.</p>
+            </template>
+
+    </lightning-card>
+</template>

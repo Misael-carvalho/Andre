@@ -1,0 +1,22 @@
+<template>
+    <lightning-card title="Desmarcar spam">
+        <lightning-record-view-form record-id={recordId} object-api-name="Account">
+            <p class="slds-p-horizontal_small">
+                <lightning-output-field field-name="Span__c"> </lightning-output-field>
+            </p>
+        </lightning-record-view-form>
+        <p slot="footer">
+            <lightning-button variant="brand" label="Desmarcar" title="Successful action" onclick={handleClick} name="openConfirmation" class="slds-m-left_x-small"></lightning-button>
+        </p>
+        </lightning-card>
+
+    <c-confirm  title='Desmarcar'
+                message='Quer mesmo desmarcar ?'
+                confirm-label='Sim'
+                cancel-label='Não'
+                visible={isDialogVisible}
+                original-message={originalMessage}
+                name="confirmModal"
+                onclick={handleClick}>
+    </c-confirm>
+</template>
